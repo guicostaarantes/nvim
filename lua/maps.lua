@@ -12,6 +12,11 @@ set('n', 'd', '"_d')
 set('n', 'D', 'd')
 set('n', 'c', '"_c')
 set('n', 'C', 'c')
+set('v', 'x', '"_x')
+set('v', 'd', '"_d')
+set('v', 'D', 'd')
+set('v', 'c', '"_c')
+set('v', 'C', 'c')
 
 -- save and quit buffers
 set('n', '<leader>ww', ':w<Return>', { silent = true })
