@@ -1,23 +1,18 @@
 local status, lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
-local on_attach = function(client)
-	-- Format on save
-	if client.server_capabilities.documentFormattingProvider then
-		vim.api.nvim_command [[augroup Format]]
-		vim.api.nvim_command [[autocmd! * <buffer>]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-		vim.api.nvim_command [[augroup END]]
-	end
-end
-
 -- Visit the page below to find lsp config for languages
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 
 -- Javascript and Typescript
 lsp.tsserver.setup {
-	on_attach,
-	cmd = { 'typescript-language-server', '--stdio' }
+	cmd = { 'typescript-language-server', '--stdio' },
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+		vim.api.nvim_command [[augroup END]]
+	end
 }
 lsp.eslint.setup {
 	on_attach = function()
@@ -30,7 +25,12 @@ lsp.eslint.setup {
 
 -- Lua
 lsp.sumneko_lua.setup {
-	on_attach,
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[augroup END]]
+	end,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -46,6 +46,21 @@ lsp.sumneko_lua.setup {
 
 -- Rust
 lsp.rust_analyzer.setup {
-	on_attach
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+		vim.api.nvim_command [[augroup END]]
+	end
 }
 
+-- Terraform
+lsp.terraformls.setup {}
+lsp.tflint.setup {
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[augroup END]]
+	end
+}

@@ -16,6 +16,7 @@ tree.setup {
 		'graphql',
 		'javascript',
 		'json',
+		'hcl',
 		'kotlin',
 		'lua',
 		'rust',
