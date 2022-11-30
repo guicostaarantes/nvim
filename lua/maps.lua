@@ -50,6 +50,7 @@ set('n', '<leader>f', ':Telescope find_files<Return>', { silent = true })
 set('n', '<leader>g', ':Telescope live_grep<Return>', { silent = true })
 set('n', '<leader>b', ':Telescope buffers<Return>', { silent = true })
 set('n', '<leader>v', ':Telescope diagnostics<Return>', { silent = true })
+set('n', '<leader>G', ':Telescope resume<Return>', { silent = true })
 
 -- lsp
 set('n', '<leader>d', ':lua vim.lsp.buf.definition()<Return>', { silent = true })
