@@ -60,6 +60,6 @@ set('n', '<leader>a', ':lua vim.lsp.buf.code_action()<Return>', { silent = true 
 set('n', '<leader>r', ':lua vim.lsp.buf.references()<Return>', { silent = true })
 set('n', '<leader>R', ':lua vim.lsp.buf.rename()<Return>', { silent = true })
 set('n', '<leader>s', ':lua vim.lsp.buf.signature_help()<Return>', { silent = true })
-set('n', '<leader>F', ':lua vim.lsp.buf.formatting()<Return>', { silent = true })
+set('n', '<leader>F', ':lua vim.lsp.buf.formatting_seq_sync()<Return>', { silent = true })
 set('n', '<leader>z', ':lua vim.diagnostic.goto_prev()<Return>', { silent = true })
 set('n', '<leader>x', ':lua vim.diagnostic.goto_next()<Return>', { silent = true })

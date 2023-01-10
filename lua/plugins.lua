@@ -18,6 +18,7 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
 	use 'L3MON4D3/LuaSnip'
+	use 'mfussenegger/nvim-dap'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
@@ -37,5 +38,10 @@ packer.startup(function(use)
 	}
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-fugitive'
+	use 'tpope/vim-sleuth'
 	use 'lewis6991/gitsigns.nvim'
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 end)
