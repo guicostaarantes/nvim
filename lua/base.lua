@@ -12,7 +12,7 @@ vim.opt.laststatus = 2
 vim.opt.scrolloff = 12
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.shell = 'zsh'
+vim.opt.shell = vim.fn.has('win32') == 1 and 'cmd' or 'zsh'
 vim.opt.ignorecase = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
