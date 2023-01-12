@@ -14,8 +14,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.shell = vim.fn.has('win32') == 1 and 'cmd' or 'zsh'
 vim.opt.ignorecase = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
 vim.opt.updatetime = 100
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
