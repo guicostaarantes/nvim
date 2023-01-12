@@ -21,3 +21,4 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.list = true
 vim.opt.listchars = 'tab:» ,extends:›,precedes:‹,nbsp:#,space:·';
+vim.opt.guifont = { "Iosevka Term", ":h14" }
