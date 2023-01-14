@@ -27,21 +27,12 @@ packer.startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
-	use {
-		'lambdalisue/fern.vim',
-		requires = {
-			'lambdalisue/nerdfont.vim',
-			'lambdalisue/fern-renderer-nerdfont.vim',
-			'lambdalisue/fern-hijack.vim',
-			'lambdalisue/fern-git-status.vim'
-		}
-	}
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-sleuth'
 	use 'lewis6991/gitsigns.nvim'
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	})
+	use {
+		'stevearc/oil.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
 end)
