@@ -36,9 +36,9 @@ set('n', 'sl', '<C-w>l', { silent = true })
 set('n', 'so', '<C-w>o', { silent = true })
 set('n', 'sq', ':close<Return>', { silent = true })
 
--- fern
-set('n', '<leader>e', ':Oil %:h<Return>', { silent = true })
-set('n', '<leader>E', ':Oil .<Return>', { silent = true })
+-- oil
+set('n', '-', ':Oil %:h<Return>', { silent = true })
+set('n', '<leader>e', ':Oil .<Return>', { silent = true })
 
 set('n', '<C-b>', ':Gitsigns prev_hunk<Return>', { silent = true })
 set('n', '<C-n>', ':Gitsigns next_hunk<Return>', { silent = true })

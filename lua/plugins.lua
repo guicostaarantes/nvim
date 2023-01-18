@@ -9,10 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'navarasu/onedark.nvim'
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+	use 'nvim-lualine/lualine.nvim'
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'
