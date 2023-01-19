@@ -7,6 +7,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.hlsearch = false
 vim.opt.backup = false
 vim.opt.showcmd = true
+vim.opt.mouse = ''
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.scrolloff = 12
