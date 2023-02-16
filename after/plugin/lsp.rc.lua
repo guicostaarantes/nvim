@@ -6,11 +6,10 @@ if (not status) then return end
 
 -- Javascript and Typescript
 lsp.tsserver.setup {
-	cmd = { 'typescript-language-server', '--stdio' },
 	on_attach = function()
 		vim.api.nvim_command [[augroup Format]]
 		vim.api.nvim_command [[autocmd! * <buffer>]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 		vim.api.nvim_command [[augroup END]]
 	end
 }
@@ -22,13 +21,21 @@ lsp.eslint.setup {
 		vim.api.nvim_command [[augroup END]]
 	end
 }
+lsp.jsonls.setup {
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+		vim.api.nvim_command [[augroup END]]
+	end
+}
 
 -- Lua
 lsp.sumneko_lua.setup {
 	on_attach = function()
 		vim.api.nvim_command [[augroup Format]]
 		vim.api.nvim_command [[autocmd! * <buffer>]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 		vim.api.nvim_command [[augroup END]]
 	end,
 	settings = {
@@ -49,7 +56,7 @@ lsp.rust_analyzer.setup {
 	on_attach = function()
 		vim.api.nvim_command [[augroup Format]]
 		vim.api.nvim_command [[autocmd! * <buffer>]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 		vim.api.nvim_command [[augroup END]]
 	end
 }
@@ -57,10 +64,10 @@ lsp.rust_analyzer.setup {
 -- Terraform
 lsp.terraformls.setup {}
 lsp.tflint.setup {
-	-- on_attach = function()
-	-- 	vim.api.nvim_command [[augroup Format]]
-	-- 	vim.api.nvim_command [[autocmd! * <buffer>]]
-	-- 	vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-	-- 	vim.api.nvim_command [[augroup END]]
-	-- end
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+		vim.api.nvim_command [[augroup END]]
+	end
 }
