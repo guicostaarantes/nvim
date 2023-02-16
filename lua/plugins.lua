@@ -32,4 +32,5 @@ packer.startup(function(use)
 		'stevearc/oil.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+	use 'ggandor/leap.nvim'
 end)

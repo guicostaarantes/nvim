@@ -7,13 +7,13 @@ telescope.setup {
 	defaults = {
 		mappings = {
 			n = {
-        q = actions.delete_buffer
+				q = actions.delete_buffer
 			}
 		},
 	},
 	pickers = {
 		find_files = {
-		theme = 'ivy',
+			theme = 'ivy',
 			layout_config = {
 				height = 30
 			}
@@ -30,7 +30,7 @@ telescope.setup {
 				height = 30
 			},
 			sort_mru = true,
-			on_complete = { function() vim.cmd"stopinsert" end }
+			on_complete = { function() vim.cmd "stopinsert" end }
 		},
 	},
 }

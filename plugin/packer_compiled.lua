@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/lualine.nvim",
