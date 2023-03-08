@@ -42,6 +42,9 @@ set('n', '<leader>c', ':G<Return><C-w>o', { silent = true })
 set('n', '<C-b>', ':Gitsigns prev_hunk<Return>', { silent = true })
 set('n', '<C-n>', ':Gitsigns next_hunk<Return>', { silent = true })
 
+-- hop
+set('n', 's', ':HopWord<Return>', { silent = true })
+
 -- telescope
 set('n', '<leader>f', ':Telescope find_files<Return>', { silent = true })
 set('n', '<leader>g', ':Telescope live_grep<Return>', { silent = true })

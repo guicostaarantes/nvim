@@ -24,6 +24,7 @@ packer.startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
+	use 'phaazon/hop.nvim'
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-sleuth'
@@ -32,5 +33,4 @@ packer.startup(function(use)
 		'stevearc/oil.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
-	use 'ggandor/leap.nvim'
 end)

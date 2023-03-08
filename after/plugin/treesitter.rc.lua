@@ -21,6 +21,7 @@ tree.setup {
 		'lua',
 		'rust',
 		'tsx',
+		'terraform',
 		'typescript'
 	},
 	autotag = {
