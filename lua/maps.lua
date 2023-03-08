@@ -20,7 +20,7 @@ set('v', 'C', 'c')
 
 -- save and quit buffers
 set('n', '<leader>ww', ':w<Return>', { silent = true })
-set('n', '<leader>qq', ':bd<Return>', { silent = true })
+set('n', '<leader>qq', ':w<Return>:bd<Return>', { silent = true })
 set('n', '<leader>q!', ':bd!<Return>', { silent = true })
 
 -- split and move windows
@@ -31,7 +31,7 @@ set('n', '<leader>wj', '<C-w>j', { silent = true })
 set('n', '<leader>wk', '<C-w>k', { silent = true })
 set('n', '<leader>wl', '<C-w>l', { silent = true })
 set('n', '<leader>wo', '<C-w>o', { silent = true })
-set('n', '<leader>wq', ':close<Return>', { silent = true })
+set('n', '<leader>wc', ':close<Return>', { silent = true })
 
 -- oil
 set('n', '-', ':Oil %:h<Return>', { silent = true })
@@ -43,7 +43,7 @@ set('n', '<C-b>', ':Gitsigns prev_hunk<Return>', { silent = true })
 set('n', '<C-n>', ':Gitsigns next_hunk<Return>', { silent = true })
 
 -- hop
-set('n', 's', ':HopWord<Return>', { silent = true })
+set('n', 's', ':HopWordMW<Return>', { silent = true })
 
 -- telescope
 set('n', '<leader>f', ':Telescope find_files<Return>', { silent = true })
