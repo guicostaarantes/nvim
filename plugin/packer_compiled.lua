@@ -168,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["vs-tasks.nvim"] = {
+    loaded = true,
+    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vs-tasks.nvim",
+    url = "https://github.com/EthanJWright/vs-tasks.nvim"
   }
 }
 

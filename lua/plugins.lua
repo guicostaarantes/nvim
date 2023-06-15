@@ -33,4 +33,11 @@ packer.startup(function(use)
 		'stevearc/oil.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+	use {
+		'EthanJWright/vs-tasks.nvim',
+		requires = {
+			'nvim-telescope/telescope.nvim',
+			'nvim-lua/plenary.nvim'
+		}
+	}
 end)
