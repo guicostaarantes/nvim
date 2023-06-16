@@ -36,7 +36,7 @@ set('n', '<leader>wo', '<C-w>o', { silent = true })
 set('n', '<leader>wc', '<cmd>close<Return>', { silent = true })
 
 -- oil
-set('n', '-', '<cmd>Oil %<cmd>h<Return>', { silent = true })
+set('n', '-', '<cmd>Oil %:h<Return>', { silent = true })
 set('n', '<leader>e', '<cmd>Oil .<Return>', { silent = true })
 
 -- git
