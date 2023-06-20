@@ -16,6 +16,7 @@ packer.startup(function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'L3MON4D3/LuaSnip'
 	use 'mfussenegger/nvim-dap'
+	use 'folke/which-key.nvim'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'

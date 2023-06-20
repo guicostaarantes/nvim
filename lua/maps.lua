@@ -20,48 +20,54 @@ set('v', 'c', '"_c')
 set('v', 'C', 'c')
 set('v', 'Y', '"+y')
 
--- save and quit buffers
-set('n', '<leader>ww', '<cmd>w<Return>', { silent = true })
-set('n', '<leader>qq', '<cmd>w<Return><cmd>bd<Return>', { silent = true })
-set('n', '<leader>q!', '<cmd>bd!<Return>', { silent = true })
+-- first level keybindings
+set('n', '-', '<cmd>lua require("oil").open()<cr>', {
+	silent = true,
+	desc = 'Explore directory of current buffer',
+})
+set('n', 's', '<cmd>HopChar1<cr>', { silent = true, desc = 'Jump to char' })
+set('v', 's', '<cmd>HopChar1<cr>', { silent = true, desc = 'Jump to char' })
 
--- split and move windows
-set('n', '<leader>ws', '<cmd>split<Return>', { silent = true })
-set('n', '<leader>wv', '<cmd>vsplit<Return>', { silent = true })
-set('n', '<leader>wh', '<C-w>h', { silent = true })
-set('n', '<leader>wj', '<C-w>j', { silent = true })
-set('n', '<leader>wk', '<C-w>k', { silent = true })
-set('n', '<leader>wl', '<C-w>l', { silent = true })
-set('n', '<leader>wo', '<C-w>o', { silent = true })
-set('n', '<leader>wc', '<cmd>close<Return>', { silent = true })
+local wk = require('which-key')
 
--- oil
-set('n', '-', '<cmd>lua require("oil").open()<Return>', { silent = true })
-set('n', '<leader>e', '<cmd>Oil .<Return>', { silent = true })
-
--- git
-set('n', '<leader>c', '<cmd>G<Return><C-w>o', { silent = true })
-set('n', '<C-b>', '<cmd>Gitsigns prev_hunk<Return>', { silent = true })
-set('n', '<C-n>', '<cmd>Gitsigns next_hunk<Return>', { silent = true })
-
--- hop
-set('n', 's', '<cmd>HopWordMW<Return>', { silent = true })
-set('v', 's', '<cmd>HopWordMW<Return>', { silent = true })
-
--- telescope
-set('n', '<leader>f', '<cmd>Telescope find_files<Return>', { silent = true })
-set('n', '<leader>g', '<cmd>Telescope live_grep<Return>', { silent = true })
-set('n', '<leader>b', '<cmd>Telescope buffers<Return>', { silent = true })
-set('n', '<leader>v', '<cmd>Telescope diagnostics<Return>', { silent = true })
-set('n', '<leader>s', '<cmd>Telescope resume<Return>', { silent = true })
-
--- lsp
-set('n', '<leader>d', '<cmd>lua vim.lsp.buf.definition()<Return>', { silent = true })
-set('n', '<leader>i', '<cmd>lua vim.lsp.buf.implementation()<Return>', { silent = true })
-set('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<Return>', { silent = true })
-set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<Return>', { silent = true })
-set('n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<Return>', { silent = true })
-set('n', '<leader>t', '<cmd>lua vim.lsp.buf.rename()<Return>', { silent = true })
-set('n', '<leader>F', '<cmd>lua vim.lsp.buf.format()<Return>', { silent = true })
-set('n', '<leader>z', '<cmd>lua vim.diagnostic.goto_prev()<Return>', { silent = true })
-set('n', '<leader>x', '<cmd>lua vim.diagnostic.goto_next()<Return>', { silent = true })
+wk.register({
+	['<leader>'] = {
+		Q = { '<cmd>bd!<cr>', 'Quit buffer (discard unsaved changes)' },
+		q = { '<cmd>w<cr><cmd>bd<cr>', 'Save and quit buffer' },
+		e = { '<cmd>Oil .<cr>', 'Explore project directory' },
+		r = { '<cmd>Telescope oldfiles<cr>', 'Open recent buffer' },
+		t = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename symbol' },
+		y = { '<cmd>lua vim.lsp.buf.format()<cr>', 'Format document' },
+		u = { '<cmd>lua vim.lsp.buf.references()<cr>', 'List references' },
+		i = { '<cmd>term<cr>', 'Open new terminal buffer' },
+		-- o = {},
+		-- p = {},
+		a = { '<cmd>wa<cr>', 'Save all buffers' },
+		s = { '<cmd>w<cr>', 'Save buffer' },
+		d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Jump to definition' },
+		f = { '<cmd>Telescope find_files<cr>', 'Search file in current directory' },
+		g = { '<cmd>Telescope live_grep<cr>', 'Search file content in current directory' },
+		h = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Show documentation' },
+		j = { '<cmd>Gitsigns next_hunk<cr>', 'Jump to next git hunk' },
+		k = { '<cmd>Gitsigns prev_hunk<cr>', 'Jump to previous git hunk' },
+		-- l = {},
+		z = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Show possible actions' },
+		x = { '<cmd>lua vim.diagnostic.goto_prev()<cr>', 'Jump to previous diagnostic' },
+		c = { '<cmd>lua vim.diagnostic.goto_next()<cr>', 'Jump to next diagnostic' },
+		v = { '<cmd>Telescope diagnostics<cr>', 'List diagnostics' },
+		b = { '<cmd>Telescope buffers<cr>', 'List buffers' },
+		n = { '<cmd>G<cr><C-w>o', 'Open git client' },
+		m = { '<cmd>Telescope resume<cr>', 'Back to Telescope panel' },
+		w = {
+			name = '+windows',
+			s = { '<cmd>split<cr>', 'Create new window below' },
+			v = { '<cmd>split<cr>', 'Create new window to the right' },
+			h = { '<C-w>h', 'Navigate to window in the left' },
+			j = { '<C-w>j', 'Navigate to window below' },
+			k = { '<C-w>k', 'Navigate to window above' },
+			l = { '<C-w>l', 'Navigate to window in the right' },
+			o = { '<C-w>o', 'Close all other windows' },
+			c = { '<C-w>c', 'Close this window' },
+		},
+	},
+})

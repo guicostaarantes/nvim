@@ -5,11 +5,6 @@ local actions = require('telescope.actions')
 
 telescope.setup {
 	defaults = {
-		mappings = {
-			n = {
-				q = actions.delete_buffer
-			}
-		},
 	},
 	pickers = {
 		find_files = {
@@ -24,13 +19,24 @@ telescope.setup {
 				height = 30
 			}
 		},
+		oldfiles = {
+			theme = 'ivy',
+			layout_config = {
+				height = 30
+			}
+		},
 		buffers = {
 			theme = 'ivy',
 			layout_config = {
 				height = 30
 			},
 			sort_mru = true,
-			on_complete = { function() vim.cmd "stopinsert" end }
+			on_complete = { function() vim.cmd "stopinsert" end },
+			mappings = {
+				n = {
+					q = actions.delete_buffer
+				}
+			},
 		},
 	},
 }

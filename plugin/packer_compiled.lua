@@ -173,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vs-tasks.nvim",
     url = "https://github.com/EthanJWright/vs-tasks.nvim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
