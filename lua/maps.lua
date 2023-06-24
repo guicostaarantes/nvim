@@ -61,7 +61,7 @@ wk.register({
 		w = {
 			name = '+windows',
 			s = { '<cmd>split<cr>', 'Create new window below' },
-			v = { '<cmd>split<cr>', 'Create new window to the right' },
+			v = { '<cmd>vsplit<cr>', 'Create new window to the right' },
 			h = { '<C-w>h', 'Navigate to window in the left' },
 			j = { '<C-w>j', 'Navigate to window below' },
 			k = { '<C-w>k', 'Navigate to window above' },
