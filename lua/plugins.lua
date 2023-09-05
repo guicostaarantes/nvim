@@ -15,7 +15,6 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
 	use 'L3MON4D3/LuaSnip'
-	use 'mfussenegger/nvim-dap'
 	use 'folke/which-key.nvim'
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -33,12 +32,5 @@ packer.startup(function(use)
 	use {
 		'stevearc/oil.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
-	}
-	use {
-		'EthanJWright/vs-tasks.nvim',
-		requires = {
-			'nvim-telescope/telescope.nvim',
-			'nvim-lua/plenary.nvim'
-		}
 	}
 end)

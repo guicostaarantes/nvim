@@ -71,3 +71,23 @@ lsp.tflint.setup {
 		vim.api.nvim_command [[augroup END]]
 	end
 }
+
+-- YAML
+lsp.yamlls.setup {
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+		vim.api.nvim_command [[augroup END]]
+	end
+}
+
+-- Svelte
+lsp.svelte.setup {
+	on_attach = function()
+		vim.api.nvim_command [[augroup Format]]
+		vim.api.nvim_command [[autocmd! * <buffer>]]
+		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+		vim.api.nvim_command [[augroup END]]
+	end
+}

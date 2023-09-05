@@ -20,9 +20,11 @@ tree.setup {
 		'kotlin',
 		'lua',
 		'rust',
+		'svelte',
 		'tsx',
 		'terraform',
-		'typescript'
+		'typescript',
+		'yaml'
 	},
 	autotag = {
 		enable = true

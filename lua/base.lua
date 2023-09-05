@@ -20,5 +20,6 @@ vim.opt.updatetime = 100
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.list = true
-vim.opt.listchars = 'tab:» ,extends:›,precedes:‹,nbsp:#,space:·';
+-- vim.opt.listchars = 'tab:» ,extends:›,precedes:‹,nbsp:#,space:·';
+vim.opt.listchars = 'tab:» ,extends:›,precedes:‹,nbsp:#';
 vim.opt.guifont = { "Iosevka Nerd Font", ":h24" }
