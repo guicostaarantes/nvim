@@ -7,7 +7,7 @@ lualine.setup {
 		theme = 'solarized_dark'
 	},
 	sections = {
-		lualine_a = {},
+		lualine_a = { 'mode' },
 		lualine_b = { 'branch' },
 		lualine_c = { { 'filename', path = 1 } },
 		lualine_x = { 'diagnostics' },

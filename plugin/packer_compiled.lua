@@ -154,20 +154,15 @@ _G.packer_plugins = {
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-doge"] = {
-    loaded = true,
-    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-doge",
-    url = "https://github.com/kkoomen/vim-doge"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-sleuth"] = {
+  ["vim-polyglot"] = {
     loaded = true,
-    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-sleuth",
-    url = "https://github.com/tpope/vim-sleuth"
+    path = "/Users/guiaula/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["which-key.nvim"] = {
     loaded = true,

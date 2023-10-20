@@ -25,12 +25,12 @@ packer.startup(function(use)
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
 	use 'phaazon/hop.nvim'
-	use 'tpope/vim-commentary'
-	use 'tpope/vim-fugitive'
-	use 'tpope/vim-sleuth'
 	use 'lewis6991/gitsigns.nvim'
 	use {
 		'stevearc/oil.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+	use 'tpope/vim-fugitive'
+	use 'sheerun/vim-polyglot'
+	use 'tpope/vim-commentary'
 end)

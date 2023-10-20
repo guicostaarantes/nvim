@@ -58,7 +58,19 @@ lsp.rust_analyzer.setup {
 		vim.api.nvim_command [[autocmd! * <buffer>]]
 		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 		vim.api.nvim_command [[augroup END]]
-	end
+	end,
+	settings = {
+		['rust-analyzer'] = {
+			procMacro = {
+				enable = true
+			},
+			diagnostics = {
+				enable = true,
+				disabled = { "unresolved-proc-macro" },
+				enableExperimental = true,
+			}
+		}
+	}
 }
 
 -- Terraform
