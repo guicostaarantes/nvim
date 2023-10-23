@@ -35,7 +35,6 @@ require('lazy').setup({
 
 	{
 		'folke/tokyonight.nvim',
-		lazy = false,
 		opts = {
 			transparent = true
 		},
@@ -223,8 +222,6 @@ require('lazy').setup({
 			local telescope = require('telescope')
 			local actions = require('telescope.actions')
 			telescope.setup {
-				defaults = {
-				},
 				pickers = {
 					find_files = {
 						theme = 'ivy',
@@ -275,7 +272,7 @@ require('lazy').setup({
 			cmp.setup {
 				snippet = {
 					expand = function(args)
-						require('luasnip').lsp_expand(args.body)
+						luasnip.lsp_expand(args.body)
 					end
 				},
 				mapping = cmp.mapping.preset.insert {
