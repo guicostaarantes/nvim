@@ -25,7 +25,6 @@ vim.opt.scrolloff = 12
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.shell = vim.fn.has('win32') == 1 and 'cmd' or 'zsh'
-vim.opt.smartcase = true
 vim.opt.updatetime = 1000
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
@@ -34,12 +33,14 @@ vim.opt.listchars = 'tab:» ,extends:›,precedes:‹,nbsp:#';
 require('lazy').setup({
 
 	{
-		'folke/tokyonight.nvim',
+		'navarasu/onedark.nvim',
 		opts = {
+			style = 'darker',
 			transparent = true
 		},
 		init = function()
-			vim.cmd [[colorscheme tokyonight]]
+			local onedark = require('onedark')
+			onedark.load()
 		end
 	},
 
@@ -71,8 +72,6 @@ require('lazy').setup({
 				silent = true,
 				desc = 'Explore directory of current buffer',
 			})
-			set('n', 's', '<cmd>HopChar1<cr>', { silent = true, desc = 'Jump to char' })
-			set('v', 's', '<cmd>HopChar1<cr>', { silent = true, desc = 'Jump to char' })
 			-- which-key for maps that start with the leader key
 			local which = require('which-key')
 			which.setup {}
@@ -181,7 +180,7 @@ require('lazy').setup({
 						},
 						diagnostics = {
 							enable = true,
-							disabled = { "unresolved-proc-macro" },
+							disabled = { 'unresolved-proc-macro' },
 							enableExperimental = true,
 						}
 					}
@@ -349,8 +348,13 @@ require('lazy').setup({
 	},
 
 	{
-		'phaazon/hop.nvim',
-		opts = {}
+		'folke/flash.nvim',
+		opts = {},
+		keys = {
+			{ 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash' },
+			{ 'S', mode = { 'n', 'x', 'o' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
+			{ '<c-s>', mode = { 'c' }, function() require('flash').toggle() end, desc = 'Toggle Flash Search' },
+		}
 	},
 
 	{
